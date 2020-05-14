@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  rsKeyList:
+  - metadata:
+      entityId: f0dfd81f-bb80-490c-80ec-71535b82cb52
+    rs:
+      key: mainPcIp
+      type: string
+      value: 192.168.0.9
+  - metadata:
+      entityId: d2c623e1-5ddd-448f-b312-c1c200d31d08
+    rs:
+      key: sendPort
+      type: int
+      value: 7000
+  - metadata:
+      entityId: 740749d2-aca0-4c47-a1ff-feabb7b33136
+    rs:
+      key: receiveBasePort
+      type: int
+      value: 6000
+  - metadata:
+      entityId: a66ddb11-4cad-47ca-ba07-47c11e385bab
+    rs:
+      key: phoneIp0
+      type: string
+      value: 192.168.0.5
+  - metadata:
+      entityId: da2ac0dd-7f52-40ee-a60e-d86fdf01b0cf
+    rs:
+      key: phoneIp1
+      type: string
+      value: 192.168.0.6
+  - metadata:
+      entityId: 94dd54d0-40a3-4796-9047-1e58891ffbde
+    rs:
+      key: baseGravity
+      type: float
+      value: 20
+  - metadata:
+      entityId: f2c03438-eb4c-4dda-9acd-d0f7d590464b
+    rs:
+      key: debug
+      type: bool
+      value: False
+  - metadata:
+      entityId: 2bce6f2b-2bab-4e8e-bbfc-d61df9fd3734
+    rs:
+      key: ballScale
+      type: float
+      value: 0.8
+  - metadata:
+      entityId: 409173c1-6c39-473a-acaa-449cc2efc180
+    rs:
+      key: addBallNum
+      type: int
+      value: 10
+  rsLastCachedKeyList:
+  - metadata:
+      entityId: f0dfd81f-bb80-490c-80ec-71535b82cb52
+    rs:
+      key: mainPcIp
+      type: string
+      value: 192.168.0.9
+  - metadata:
+      entityId: d2c623e1-5ddd-448f-b312-c1c200d31d08
+    rs:
+      key: sendPort
+      type: int
+      value: 7000
+  - metadata:
+      entityId: 740749d2-aca0-4c47-a1ff-feabb7b33136
+    rs:
+      key: receiveBasePort
+      type: int
+      value: 6000
+  - metadata:
+      entityId: a66ddb11-4cad-47ca-ba07-47c11e385bab
+    rs:
+      key: phoneIp0
+      type: string
+      value: 192.168.0.5
+  - metadata:
+      entityId: da2ac0dd-7f52-40ee-a60e-d86fdf01b0cf
+    rs:
+      key: phoneIp1
+      type: string
+      value: 192.168.0.6
+  - metadata:
+      entityId: 94dd54d0-40a3-4796-9047-1e58891ffbde
+    rs:
+      key: baseGravity
+      type: float
+      value: 20
+  - metadata:
+      entityId: f2c03438-eb4c-4dda-9acd-d0f7d590464b
+    rs:
+      key: debug
+      type: bool
+      value: False
+  - metadata:
+      entityId: 2bce6f2b-2bab-4e8e-bbfc-d61df9fd3734
+    rs:
+      key: ballScale
+      type: float
+      value: 0.8
+  - metadata:
+      entityId: 409173c1-6c39-473a-acaa-449cc2efc180
+    rs:
+      key: addBallNum
+      type: int
+      value: 10
+  configId: 9fd19c34-2884-4c5f-9e78-36a5c42f7fe3
+  currentEnvironmentId: 181e7c26-704a-4b91-ba57-bbff6e297985
+  environments:
+  - id: 181e7c26-704a-4b91-ba57-bbff6e297985
+    appId: 
+    name: Development (Default)
+    description: 
+    createdAt: 2020-04-20T07:51:31Z
+    updatedAt: 2020-04-20T07:51:55Z
+  - id: 88594b92-8b96-445f-98cf-79e8bb365ecb
+    appId: 
+    name: Release
+    description: 
+    createdAt: 2020-04-20T07:51:31Z
+    updatedAt: 2020-04-20T07:51:55Z
+  rulesList: []
+  lastCachedRulesList: []
+  addedRulesIDs: []
+  updatedRulesIDs: []
+  deletedRulesIDs: []

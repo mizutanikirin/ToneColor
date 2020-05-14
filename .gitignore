@@ -9,6 +9,11 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/SourcePC/Assets/AzureKinectExamples/
+/SourcePC/Assets/Plugins/Pixelplacement/
+/SourceMobile/Assets/Plugins/Pixelplacement/
+/SourcePC/Library/
+/SourceMobile/Library/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
