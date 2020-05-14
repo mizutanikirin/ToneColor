@@ -12,8 +12,10 @@
 /SourcePC/Assets/AzureKinectExamples/
 /SourcePC/Assets/Plugins/Pixelplacement/
 /SourceMobile/Assets/Plugins/Pixelplacement/
+/SourcePC/Assets/AzureKinectExamples/
 /SourcePC/Library/
 /SourceMobile/Library/
+/SourcePC/Assets/Projects/Scripts/BlobManager.cs*
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
