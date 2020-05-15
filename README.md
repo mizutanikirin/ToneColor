@@ -224,8 +224,13 @@ Azure Kinectを制御するスクリプトです。ここでKinectの奥行き�
 ![remoteconfig](https://user-images.githubusercontent.com/4795806/82001171-80989c00-9695-11ea-89c3-88168274cdfb.png)
 
 # アプリ実行について
-1. PCアプリを起動します。
-2. 次にandroidアプリを起動させます。
+
+1. 機器を設置します。
+2. PCアプリを起動します。
+3. 次にandroidアプリを起動させます。
+
+![howto](https://user-images.githubusercontent.com/4795806/82006935-e855e380-96a3-11ea-83f5-111006459e97.png)
+
 
 ※ 途中でどちらかのアプリを再起動したい場合、念のため両方起動し直してください。  
 ※ PCアプリでDボタンを押すとデバッグモードになり物体が反応しているか見ることができます。  
