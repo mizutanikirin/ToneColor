@@ -16,6 +16,7 @@ tone colorはMIZUTANI KIRINが制作したスマホとディスプレイを連�
 [必要なAsset]
 - [Azure Kinect Examples for Unity](https://assetstore.unity.com/packages/tools/integration/azure-kinect-examples-for-unity-149700) (ver1.10)
 - [iTween](https://assetstore.unity.com/packages/tools/animation/itween-84?locale=ja-JP)  
+- [KirinUtil](https://github.com/mizutanikirin/KirinUtil)  (※内部に組み込み済み)
   
 ![howto](https://user-images.githubusercontent.com/4795806/82172941-b3959680-9906-11ea-8eda-5a84f02d6122.png)
 
