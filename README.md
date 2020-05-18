@@ -14,7 +14,9 @@ Tone ColorはMIZUTANI KIRINが制作したインタラクション作品です�
 
 [必要なAsset]
 - [Azure Kinect Examples for Unity](https://assetstore.unity.com/packages/tools/integration/azure-kinect-examples-for-unity-149700) (ver1.10)
-- [iTween](https://assetstore.unity.com/packages/tools/animation/itween-84?locale=ja-JP)
+- [iTween](https://assetstore.unity.com/packages/tools/animation/itween-84?locale=ja-JP)  
+  
+![howto](https://user-images.githubusercontent.com/4795806/82172941-b3959680-9906-11ea-8eda-5a84f02d6122.png)
 
 # PCアプリのProject設定
 PCアプリでは以下4つの設定が必要になります。Projectで使っているファイルは基本的にAssets/Projects/に入っています。まずはAssets/Projects/Scene/Main.unityを開いてください。これがメインのシーンになります。  
@@ -226,13 +228,9 @@ Azure Kinectを制御するスクリプトです。ここでKinectの奥行き�
 
 # アプリ実行について
 
-1. 機器を設置します。
-2. PCアプリを起動します。
-3. 次にandroidアプリを起動させます。
-
-![howto](https://user-images.githubusercontent.com/4795806/82006935-e855e380-96a3-11ea-83f5-111006459e97.png)
-
-
+1. 機器を設置します。  
+2. PCアプリを起動します。  
+3. 次にandroidアプリを起動させます。  
 ※ 途中でどちらかのアプリを再起動したい場合、念のため両方起動し直してください。  
 ※ PCアプリでDボタンを押すとデバッグモードになり物体が反応しているか見ることができます。  
 ※ windowsのファイアウォールを切るか、除外設定をしないとPCとandroidアプリの連携ができません。  
