@@ -2172,7 +2172,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1480293374}
   - component: {fileID: 1480293375}
-  - component: {fileID: 1480293376}
   m_Layer: 0
   m_Name: udpManager
   m_TagString: Untagged
@@ -2206,33 +2205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ade018b911b93346a0194733b646a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1480293376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480293373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce389fe4763d4bc45aaa3737b24a01ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 0
-  uDPReceivedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1932361097}
-        m_MethodName: UdpReceive
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1711310981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,11 +2773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2b386e298595e4f828ccaae8044120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildNum: 0
   mainPcIp: 
-  phoneIpList: []
   sendPort: 0
-  receiveBasePort: 0
   baseGravity: 20
   displayAngle: 0
   debug: 0
@@ -2833,11 +2802,7 @@ MonoBehaviour:
   alphaLimitAngle: 45
   debugUI: {fileID: 785726688}
   debugText: {fileID: 113085847}
-  initKey: Init
-  addBlobKey: SetID
-  removeBlobKey: RemoveID
   udpSendManager: {fileID: 1480293375}
-  udpReceiveManager: {fileID: 1480293376}
 --- !u!4 &1932361098
 Transform:
   m_ObjectHideFlags: 0

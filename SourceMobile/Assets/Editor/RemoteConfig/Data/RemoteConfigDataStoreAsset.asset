@@ -14,110 +14,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rsKeyList:
   - metadata:
-      entityId: f0dfd81f-bb80-490c-80ec-71535b82cb52
+      entityId: 2b344c73-c493-4804-be1f-597842df9eeb
     rs:
       key: mainPcIp
       type: string
       value: 192.168.0.9
   - metadata:
-      entityId: d2c623e1-5ddd-448f-b312-c1c200d31d08
+      entityId: ded99b4b-ce25-4c02-9390-5e779f869a11
     rs:
       key: sendPort
       type: int
       value: 7000
   - metadata:
-      entityId: 740749d2-aca0-4c47-a1ff-feabb7b33136
+      entityId: 17e4f0ec-53f5-4e4a-a2ae-e9854f596c06
     rs:
-      key: receiveBasePort
-      type: int
-      value: 6000
-  - metadata:
-      entityId: a66ddb11-4cad-47ca-ba07-47c11e385bab
-    rs:
-      key: phoneIp0
+      key: phoneIp
       type: string
-      value: 192.168.0.5
+      value: 192.168.0.2
   - metadata:
-      entityId: da2ac0dd-7f52-40ee-a60e-d86fdf01b0cf
-    rs:
-      key: phoneIp1
-      type: string
-      value: 192.168.0.6
-  - metadata:
-      entityId: 94dd54d0-40a3-4796-9047-1e58891ffbde
+      entityId: 24ca5550-9004-4358-ac5b-1537addf912b
     rs:
       key: baseGravity
       type: float
       value: 20
   - metadata:
-      entityId: f2c03438-eb4c-4dda-9acd-d0f7d590464b
+      entityId: 625cbd8a-ad55-4823-9fb0-d9d0bbb2b382
     rs:
       key: debug
       type: bool
-      value: False
+      value: false
   - metadata:
-      entityId: 2bce6f2b-2bab-4e8e-bbfc-d61df9fd3734
+      entityId: 6bbbf357-a093-48e7-9e9f-54be88d89aa0
     rs:
       key: ballScale
       type: float
       value: 0.8
   - metadata:
-      entityId: 409173c1-6c39-473a-acaa-449cc2efc180
+      entityId: 1e4eb332-d649-490f-966a-cf1885779a22
     rs:
       key: addBallNum
       type: int
       value: 10
   rsLastCachedKeyList:
   - metadata:
-      entityId: f0dfd81f-bb80-490c-80ec-71535b82cb52
+      entityId: 2b344c73-c493-4804-be1f-597842df9eeb
     rs:
       key: mainPcIp
       type: string
       value: 192.168.0.9
   - metadata:
-      entityId: d2c623e1-5ddd-448f-b312-c1c200d31d08
+      entityId: ded99b4b-ce25-4c02-9390-5e779f869a11
     rs:
       key: sendPort
       type: int
       value: 7000
   - metadata:
-      entityId: 740749d2-aca0-4c47-a1ff-feabb7b33136
+      entityId: 17e4f0ec-53f5-4e4a-a2ae-e9854f596c06
     rs:
-      key: receiveBasePort
-      type: int
-      value: 6000
-  - metadata:
-      entityId: a66ddb11-4cad-47ca-ba07-47c11e385bab
-    rs:
-      key: phoneIp0
+      key: phoneIp
       type: string
-      value: 192.168.0.5
+      value: 192.168.0.2
   - metadata:
-      entityId: da2ac0dd-7f52-40ee-a60e-d86fdf01b0cf
-    rs:
-      key: phoneIp1
-      type: string
-      value: 192.168.0.6
-  - metadata:
-      entityId: 94dd54d0-40a3-4796-9047-1e58891ffbde
+      entityId: 24ca5550-9004-4358-ac5b-1537addf912b
     rs:
       key: baseGravity
       type: float
-      value: 20
+      value: 20.000000
   - metadata:
-      entityId: f2c03438-eb4c-4dda-9acd-d0f7d590464b
+      entityId: 625cbd8a-ad55-4823-9fb0-d9d0bbb2b382
     rs:
       key: debug
       type: bool
-      value: False
+      value: false
   - metadata:
-      entityId: 2bce6f2b-2bab-4e8e-bbfc-d61df9fd3734
+      entityId: 6bbbf357-a093-48e7-9e9f-54be88d89aa0
     rs:
       key: ballScale
       type: float
-      value: 0.8
+      value: 0.800000
   - metadata:
-      entityId: 409173c1-6c39-473a-acaa-449cc2efc180
+      entityId: 1e4eb332-d649-490f-966a-cf1885779a22
     rs:
       key: addBallNum
       type: int

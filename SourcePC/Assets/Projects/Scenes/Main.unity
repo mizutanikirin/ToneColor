@@ -130,8 +130,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 42064156}
-  - component: {fileID: 42064158}
-  - component: {fileID: 42064159}
   - component: {fileID: 42064157}
   m_Layer: 0
   m_Name: udpManager
@@ -181,30 +179,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &42064158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42064155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ade018b911b93346a0194733b646a8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &42064159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42064155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de72c5168eee624a90a642845afa376, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &60178739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,12 +1508,10 @@ MonoBehaviour:
   xyDistanceToBlob: 10
   zDistanceToBlob: 50
   minPixelsInBlob: 50
+  maxPixelsInBlob: 1654
   xyIncrement: 3
   timeBetweenChecks: 0.1
   infoText: {fileID: 950384879}
-  maxPixelsInBlob: 1654
-  kinectMinDistance: 0.5
-  kinectMaxDistance: 0.8
   minX: 66
   maxX: 462
   minY: 206
@@ -2709,8 +2681,6 @@ MonoBehaviour:
   depthImage: {fileID: 1704346333}
   blobManager: {fileID: 1128628985}
   followingManager: {fileID: 1128628986}
-  udpSend1Manager: {fileID: 42064158}
-  udpSend2Manager: {fileID: 42064159}
   rootDataDir: /../../AppData/
   settingDataDir: Setting/
   appXmlFileName: app_setting.xml
@@ -2729,7 +2699,6 @@ MonoBehaviour:
   soundCirclePrefab: {fileID: 7811655126646507965, guid: 5204c7987688b3444ad0db62c309a0a2,
     type: 3}
   ip: 
-  sendPort: 6000
   receivePort: 7000
   udpKey: phoneData
   debugIdText: {fileID: 1195293360}

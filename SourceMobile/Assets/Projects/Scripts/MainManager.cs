@@ -7,14 +7,9 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour {
 
-    [Header("Setting")]
-    public int buildNum;
-
     [Header("Config")]
     public string mainPcIp;
-    public List<string> phoneIpList;
     public int sendPort;
-    public int receiveBasePort;
     public float baseGravity;
     public float displayAngle;
     public bool debug = false;
@@ -22,13 +17,11 @@ public class MainManager : MonoBehaviour {
     public int addBallNum;
 
     [Header("Vars")]
-    private string phoneIp;
-    private int phoneId;
-    private int managerNum;
     public Vector3 phoneAngle;
     public float topPos;
     //public GameObject wallTopObj;
     private int phoneDirection;
+    private string phoneIp;
 
     [Header("Camera")]
     public int cameraNum;
@@ -61,22 +54,30 @@ public class MainManager : MonoBehaviour {
     public Text debugText;
 
 
-    [Header("Key")]
-    public string initKey;
-    public string addBlobKey;
-    public string removeBlobKey;
-
-    [System.Serializable]
-    public class JsonData {
-        public string key;
-        //public string ip;
-        //public string port;
-        public string id;
-        public string data;
-    }
-
     public UDPSendManager udpSendManager;
-    public UDPReceiveManager udpReceiveManager;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     //----------------------------------
     //  init
@@ -88,13 +89,8 @@ public class MainManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        phoneIpList = new List<string>();
-        phoneIpList.Add("");
-        phoneIpList.Add("");
         ballObjList = new List<GameObject>();
         addedBall = false;
-        phoneId = -1;
-        managerNum = -1;
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
     }
 
@@ -321,12 +317,9 @@ public class MainManager : MonoBehaviour {
 
     private void UdpStart() {
         udpSendManager.Init(mainPcIp, sendPort);
-        phoneIp = phoneIpList[buildNum];
 
         List<int> ipList = Util.GetSplitIntList(phoneIp, ".");
         int endIp = ipList[ipList.Count - 1];
-        udpReceiveManager.port = receiveBasePort + endIp;
-        udpReceiveManager.UDPStart();
     }
 
     #region send
@@ -349,9 +342,7 @@ public class MainManager : MonoBehaviour {
         string sendData =
             "{" +
             "\"key\":\"" + mainKeyName + "\"," +
-            "\"managerNum\":\"" + managerNum + "\"," +
-            "\"ip\":\"" + phoneIp + "\"," +
-            "\"id\":\"" + phoneId + "\"";
+            "\"ip\":\"" + phoneIp + "\"";
 
         if (keyList == null || keyList.Count == 0) {
         } else {
@@ -373,28 +364,38 @@ public class MainManager : MonoBehaviour {
     }
     #endregion
 
-    #region receive
-    public void UdpReceive(string data) {
-        ReadJson(data);
-    }
-
-    private void ReadJson(string data) {
-
-        JsonData jsonData = JsonUtility.FromJson<JsonData>(data);
-        print(jsonData.key);
-
-        if (jsonData.key == initKey) {
-            managerNum = int.Parse(jsonData.data);
-        } else if (jsonData.key == addBlobKey) {
-            phoneId = int.Parse(jsonData.data);
-        } else if (jsonData.key == removeBlobKey) {
-            phoneId = -1;
-        }
-
-    }
     #endregion
 
-    #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //----------------------------------
     //  ui / switch mode
@@ -474,10 +475,8 @@ public class MainManager : MonoBehaviour {
 
     private void SetVars() {
         mainPcIp = ConfigManager.appConfig.GetString("mainPcIp");
-        sendPort = ConfigManager.appConfig.GetInt("sendPort");
-        receiveBasePort = ConfigManager.appConfig.GetInt("receiveBasePort");
-        phoneIpList[0] = ConfigManager.appConfig.GetString("phoneIp0");
-        phoneIpList[1] = ConfigManager.appConfig.GetString("phoneIp1");
+        sendPort = ConfigManager.appConfig.GetInt("sendPort");        
+        phoneIp = ConfigManager.appConfig.GetString("phoneIp");
         baseGravity = ConfigManager.appConfig.GetFloat("baseGravity");
         displayAngle = ConfigManager.appConfig.GetFloat("displayAngle");
         debug = ConfigManager.appConfig.GetBool("debug");

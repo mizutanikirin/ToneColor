@@ -18,8 +18,6 @@ public class MainManager : MonoBehaviour {
     [Separator("Manager")]
     public BlobManager blobManager;
     public FollowingManager followingManager;
-    public UDPSendManager udpSend1Manager;
-    public UDPSend2Manager udpSend2Manager;
 
     [Separator("Var")]
     public string rootDataDir = "/../../AppData/";
@@ -27,7 +25,6 @@ public class MainManager : MonoBehaviour {
     public string appXmlFileName = "app_setting.xml";
     private int screenWidth;
     private int screenHeight;
-    private int udpSendInitNum;
     private List<List<float>> idList;
     public Camera mainCamera;
     public Canvas mainCanvas;
@@ -48,10 +45,8 @@ public class MainManager : MonoBehaviour {
 
     [Separator("UDP")]
     public string ip;
-    public int sendPort;
     public int receivePort;
     public string udpKey;
-    private List<string> sendInitedIpList;
     private List<PhoneJson> phoneDataList;
 
     [System.Serializable]
@@ -59,9 +54,7 @@ public class MainManager : MonoBehaviour {
         public string key;
         public string ip;
         public string port;
-        public string id;
         public string data;
-        public string managerNum;
         public string ball;
         public int direction;
     }
@@ -70,8 +63,6 @@ public class MainManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
 
-        udpSendInitNum = 0;
-        sendInitedIpList = new List<string>();
         phoneDataList = new List<PhoneJson>();
 
         rootDataDir = Application.dataPath + rootDataDir;
@@ -150,45 +141,6 @@ public class MainManager : MonoBehaviour {
             debugIdText.text += "ID: " + idList[i][0] + "  x:" + idList[i][1] + "  y:" + idList[i][2] + System.Environment.NewLine;
         }
     }
-
-    public void AddedBlob(int id) {
-        // todo どちらがディスプレイの上の端末か判別できないので後で考える。とりあえずidが-1のもの送ることにする
-        List<string> keyList = new List<string>();
-        keyList.Add("data");
-        List<string> dataList = new List<string>();
-        dataList.Add(id.ToString());
-        SendData("SetID", keyList, dataList, GetEmptyManagerNum());
-    }
-
-    public void RemoveBlob(int id) {
-        SendData("RemoveID", null, null, GetManagerNum(id));
-    }
-
-    private int GetEmptyManagerNum() {
-        int managerNum = 0;
-
-        for (int i = 0; i < phoneDataList.Count; i++) {
-            if (phoneDataList[i].id == "-1") {
-                managerNum = i;
-                break;
-            }
-        }
-
-        return managerNum;
-    }
-
-    private int GetManagerNum(int id) {
-        int managerNum = 0;
-
-        for (int i = 0; i < phoneDataList.Count; i++) {
-            if (phoneDataList[i].id == id.ToString()) {
-                managerNum = i;
-                break;
-            }
-        }
-
-        return managerNum;
-    }
     #endregion
 
     //----------------------------------
@@ -208,7 +160,7 @@ public class MainManager : MonoBehaviour {
             List<string> ballColorList = Util.GetSplitStringList(phoneDataList[i].ball, ",");
             if (ballColorList == null || ballColorList.Count == 0) continue;
 
-            Vector3 ballPos = GetBlobPos(phoneDataList[i].id, phoneDataList[i].direction);
+            Vector3 ballPos = GetBlobPos(phoneDataList[i].direction);
             Util.PosX(ballWallObj, ballPos.x);
 
             for (int j = 0; j < ballColorList.Count; j++) {
@@ -234,19 +186,15 @@ public class MainManager : MonoBehaviour {
     }
 
 
-    private Vector3 GetBlobPos(string id, int direction) {
+    private Vector3 GetBlobPos(int direction) {
         Vector3 uiPos = Vector3.zero;
 
         float rateX = Screen.width / blobManager.displayAreaRect.width;
         print("id count: " + idList.Count + "  rateX: " + rateX);
         for (int i = 0; i < idList.Count; i++) {
-            print("idList: " + idList[i][0] + "  id: " + id);
-            if (idList[i][0] == int.Parse(id)) {
-                uiPos.x = (idList[i][1] - blobManager.displayAreaRect.x) * rateX;
+            uiPos.x = (idList[i][1] - blobManager.displayAreaRect.x) * rateX;
                 uiPos.y = idList[i][2];
                 uiPos.z = idList[i][3];
-                break;
-            }
         }
         print("uiPos: " + uiPos.x);
 
@@ -308,9 +256,6 @@ public class MainManager : MonoBehaviour {
         print(data);
 
         if (jsonData.key == udpKey) {
-            // sendの初期化ができてない場合は初期化する
-            if (jsonData.managerNum == "-1") UDPSendInit(jsonData);
-
             PhoneDataListUpdate(jsonData);
         }
 
@@ -330,8 +275,6 @@ public class MainManager : MonoBehaviour {
 
         if (exist) {
             phoneDataList[listNum].ip = phoneData.ip;
-            phoneDataList[listNum].id = phoneData.id;
-            phoneDataList[listNum].managerNum = phoneData.managerNum;
             phoneDataList[listNum].ball = phoneData.ball;
             phoneDataList[listNum].direction = phoneData.direction;
         } else {
@@ -339,61 +282,6 @@ public class MainManager : MonoBehaviour {
         }
     }
 
-    #endregion
-
-    #region send
-    private void UDPSendInit(PhoneJson jsonData) {
-        if (sendInitedIpList == null || sendInitedIpList.Count == 0) { } else {
-            if(Util.MatchWord(sendInitedIpList, jsonData.ip)) return;
-        }
-
-        // init
-        List<int> ipList = Util.GetSplitIntList(jsonData.ip, ".");
-        int endIp = ipList[ipList.Count - 1];
-        if (udpSendInitNum == 0) {
-            udpSend1Manager.Init(jsonData.ip, sendPort + endIp);
-        } else {
-            udpSend2Manager.Init(jsonData.ip, sendPort + endIp);
-        }
-
-        // sendData
-        List<string> keyList = new List<string>();
-        keyList.Add("data");
-        List<string> dataList = new List<string>();
-        dataList.Add(udpSendInitNum.ToString());
-        SendData("Init", keyList, dataList, udpSendInitNum);
-
-        sendInitedIpList.Add(jsonData.ip);
-        udpSendInitNum++;
-
-        print("UDPSendInit: " + jsonData.ip);
-    }
-
-    private void SendData(string mainKeyName, List<string> keyList, List<string> dataList, int managerNum) {
-
-        string sendData =
-            "{" +
-            "\"key\":\"" + mainKeyName + "\"";
-
-        if (keyList == null || keyList.Count == 0) {
-        } else {
-            sendData += ",";
-        }
-
-        if (keyList != null) {
-            print(mainKeyName + ": " + keyList.Count + "  " + dataList.Count);
-            for (int i = 0; i < keyList.Count; i++) {
-                sendData += "\"" + keyList[i] + "\":\"" + dataList[i] + "\"";
-                if (i != keyList.Count - 1) sendData += ",";
-            }
-        }
-        sendData += "}";
-
-        print("SendData: " + managerNum);
-
-        if(managerNum == 0) udpSend1Manager.UDPSend(sendData);
-        else udpSend2Manager.UDPSend(sendData);
-    }
     #endregion
 
     #endregion
@@ -425,8 +313,6 @@ public class MainManager : MonoBehaviour {
             screenWidth = int.Parse(node.InnerText);
         } else if (node.Name == "screenHeight") {
             screenHeight = int.Parse(node.InnerText);
-        } else if (node.Name == "sendPort") {
-            sendPort = int.Parse(node.InnerText);
         } else if (node.Name == "receivePort") {
             receivePort = int.Parse(node.InnerText);
         } else if (node.Name == "xylophoneSoundNum") {
@@ -435,24 +321,6 @@ public class MainManager : MonoBehaviour {
             ballScale = float.Parse(node.InnerText);
         }
 
-
-        /*else if (node.Name == "message") {
-            XmlNodeList node0List = node.ChildNodes;
-
-            foreach (XmlNode node0 in node0List) {
-                if (node0.Name == "deveiceOpenError") {
-                    deveiceOpenError = node0.InnerText;
-                    test = float.Parse(node0.Attributes["power"].Value);
-                } else if (node0.Name == "scanError") {
-                    scanErrorMessage = node0.InnerText;
-                }
-            }
-        } else if (node.Name == "ipAddress") {
-            ipAddress = node.InnerText;
-            print(ipAddress);
-        } else if (node.Name == "portNum") {
-            portNum = int.Parse(node.InnerText);
-        }*/
     }
 
     #endregion
