@@ -187,7 +187,7 @@ void OnRenderObject()関数をコメントアウト
 
 ## 3. BlobManagerのInspector設定
 以下のように設定します。  
-![blobManager](https://user-images.githubusercontent.com/4795806/81911383-31585a00-9608-11ea-9b35-9105cdeb189b.png)
+![blobManager](https://user-images.githubusercontent.com/4795806/82172643-b8a61600-9905-11ea-9419-6d52eb7bcd8d.png)
 
 ## 4. app_setting.xmlの設定
 [AppData\Setting\app_setting.xml]でPCアプリのポート設定などができます。  
@@ -210,6 +210,7 @@ Inspectorではスマホの位置取得の範囲を指定できます。X方向�
 
 ### FollowingManager
 BlobManagerで検出した塊にIDを付けるScriptです。  
+![blob_follow](https://user-images.githubusercontent.com/4795806/82172731-fb67ee00-9905-11ea-95c0-2c2f31d43ebd.png)
 
 ### Kinect4AzureInterface
 Azure Kinectを制御するスクリプトです。ここでKinectの奥行きの最小/最大値が変更できますが、BlobManager側のInspectorで設定お願いします。  
@@ -221,7 +222,7 @@ Azure Kinectを制御するスクリプトです。ここでKinectの奥行き�
 # AndroidアプリのProject設定
 プロジェクトではipアドレスなど数値を変更するためにUnity Remote Configを使用しています。Unity Servicesで自分のUnityアカウントと連携をしてください。  
 連携してRemote Configウィンドウを表示すると以下のようになります。IPアドレスなど設定してください。  
-![remoteconfig](https://user-images.githubusercontent.com/4795806/82001171-80989c00-9695-11ea-89c3-88168274cdfb.png)
+![remoteconfig](https://user-images.githubusercontent.com/4795806/82172676-d1aec700-9905-11ea-91ad-0ca28c4ede01.png)
 
 # アプリ実行について
 

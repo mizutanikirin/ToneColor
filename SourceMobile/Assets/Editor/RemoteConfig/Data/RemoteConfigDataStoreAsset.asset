@@ -30,7 +30,7 @@ MonoBehaviour:
     rs:
       key: phoneIp
       type: string
-      value: 192.168.0.2
+      value: 192.168.0.9
   - metadata:
       entityId: 24ca5550-9004-4358-ac5b-1537addf912b
     rs:
@@ -73,13 +73,13 @@ MonoBehaviour:
     rs:
       key: phoneIp
       type: string
-      value: 192.168.0.2
+      value: 192.168.0.9
   - metadata:
       entityId: 24ca5550-9004-4358-ac5b-1537addf912b
     rs:
       key: baseGravity
       type: float
-      value: 20.000000
+      value: 20
   - metadata:
       entityId: 625cbd8a-ad55-4823-9fb0-d9d0bbb2b382
     rs:
@@ -91,7 +91,7 @@ MonoBehaviour:
     rs:
       key: ballScale
       type: float
-      value: 0.800000
+      value: 0.8
   - metadata:
       entityId: 1e4eb332-d649-490f-966a-cf1885779a22
     rs:
