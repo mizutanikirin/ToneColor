@@ -182,7 +182,7 @@ public class MainManager : MonoBehaviour {
 
         Color32 ballColor = Util.media.HexToColor(hexColor);
         ballObj.GetComponent<Renderer>().material.color = ballColor;
-        ballObj.GetComponent<BallManager>().SetValue(GetBallSoundNum(ballColor), 17, ballColor, soundCirclePrefab, soundCircleParentObj);
+        ballObj.GetComponent<BallManager>().SetValue(GetBallSoundNum(ballColor), xylophoneSoundNum, ballColor, soundCirclePrefab, soundCircleParentObj);
     }
 
 
