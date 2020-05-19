@@ -1,7 +1,7 @@
 # tone color
 ![tone color](https://user-images.githubusercontent.com/4795806/82279171-d4bdbc00-99c6-11ea-972a-bc81eb42af02.png)
 tone colorはMIZUTANI KIRINが制作したスマホとディスプレイを連携させたインタラクション作品です。  
-[Youtube](https://youtu.be/BMeHVJPwYB8)
+[Youtube](https://youtu.be/BMeHVJPwYB8)  
 [note](https://note.com/thedesignium/n/n7d58ae48ef42)
 
 たくさんの方にtone colorを使っていただきたいと思い、ソースを公開しました。自分なりの表現をプラスして作品をさらに良いものにしてもらえすと幸いです。  
